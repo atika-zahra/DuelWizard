@@ -27,13 +27,29 @@
         Console.WriteLine($"Nama Wizard  : {Name}");
         Console.WriteLine($"Energy       : {Energy}");
     }
-}
 
-class Program
-{
-    static void Main(string[] args)
+    class Program
     {
-        Wizard wizard1 = new Wizard("Eden", 20);
-        Wizard wizard2 = new Wizard("Loe", 15);
+        static void Main(string[] args)
+        {
+            Wizard wizard1 = new Wizard("Eden", 20);
+            Wizard wizard2 = new Wizard("Loe", 15);
+
+
+            wizard1.showStats();
+            wizard2.showStats();
+
+            wizard1.Attack(wizard2);
+            wizard2.Attack(wizard1);
+            wizard1.Attack(wizard2);
+
+            Console.WriteLine("=== Statistik Akhir ===");
+            wizard1.showStats();
+            wizard2.showStats();
+
+            Console.ReadLine();
+        }
+
     }
 }
+
