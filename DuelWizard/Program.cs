@@ -21,4 +21,10 @@
         Console.WriteLine($"{Name} menyerang {enemy.Energy}!");
         Console.WriteLine($"Energi {enemy.Name} tersisa: {enemy.Energy}");
     }
+
+    public void showStats()
+    {
+        Console.WriteLine($"Nama Wizard  : {Name}");
+        Console.WriteLine($"Energy       : {Energy}");
+    }
 }
