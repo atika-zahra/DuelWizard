@@ -28,3 +28,12 @@
         Console.WriteLine($"Energy       : {Energy}");
     }
 }
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Wizard wizard1 = new Wizard("Eden", 20);
+        Wizard wizard2 = new Wizard("Loe", 15);
+    }
+}
