@@ -10,4 +10,15 @@
         Energy = 100;
         Damage = damage;
     }
+
+    public void Attack(Wizard enemy)
+    {
+        enemy.Energy -= Damage;
+
+        if (enemy.Energy < 0) 
+            enemy.Energy = 0; 
+
+        Console.WriteLine($"{Name} menyerang {enemy.Energy}!");
+        Console.WriteLine($"Energi {enemy.Name} tersisa: {enemy.Energy}");
+    }
 }
