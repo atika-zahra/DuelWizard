@@ -1,4 +1,21 @@
-﻿public class Wizard
+﻿Wizard wizardA = new Wizard("Jeruk", 5);
+Wizard wizardB = new Wizard("Apel", 15);
+
+Console.WriteLine("Permainan dimulai...\n");
+Console.WriteLine("Statistik Awal");
+wizardA.showStats();
+wizardB.showStats();
+
+wizardA.Attack(wizardB);
+wizardB.Attack(wizardA);
+wizardA.Attack(wizardB);
+
+Console.WriteLine("Permainan selesai...\n");
+Console.WriteLine("Statistik Akhir");
+wizardA.showStats();
+wizardB.showStats();
+
+public class Wizard
 {
     public string Name;
     public int Energy;
@@ -11,45 +28,22 @@
         Damage = damage;
     }
 
-    public void Attack(Wizard enemy)
+    public void Attack(Wizard enemyObj)
     {
-        enemy.Energy -= Damage;
+        enemyObj.Energy -= Damage;
 
-        if (enemy.Energy < 0) 
-            enemy.Energy = 0; 
-
-        Console.WriteLine($"{Name} menyerang {enemy.Energy}!");
-        Console.WriteLine($"Energi {enemy.Name} tersisa: {enemy.Energy}");
+        Console.WriteLine($"{Name} menyerang {enemyObj.Name}!");
+        Console.WriteLine($"Energi {enemyObj.Name} tersisa: {enemyObj.Energy}");
     }
 
     public void showStats()
     {
         Console.WriteLine($"Nama Wizard  : {Name}");
-        Console.WriteLine($"Energy       : {Energy}");
+        Console.WriteLine($"Energy       : {Energy}\n");
     }
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Wizard wizard1 = new Wizard("Eden", 20);
-            Wizard wizard2 = new Wizard("Loe", 15);
-
-
-            wizard1.showStats();
-            wizard2.showStats();
-
-            wizard1.Attack(wizard2);
-            wizard2.Attack(wizard1);
-            wizard1.Attack(wizard2);
-
-            Console.WriteLine("=== Statistik Akhir ===");
-            wizard1.showStats();
-            wizard2.showStats();
-
-            Console.ReadLine();
-        }
-
-    }
+    
 }
+
+
 
